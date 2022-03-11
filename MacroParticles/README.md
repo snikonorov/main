@@ -2,8 +2,8 @@
 
 This project implements an interactive Van-der-Waals-like particle physics simulation. It allows to create new particles, interact with them and visualize the strain between them. Additionally you can enable the rendering of the dynamic plots of total kinetic energy and average/max strain over time.
 
-![An example of a particle system][img/img1.png]
-![Strain graph and energy/strain plots][img/img2.png]
+![An example of a particle system](img/img1.png)
+![Strain graph and energy/strain plots](img/img2.png)
 
 Graphs:
 

@@ -14,7 +14,7 @@ Graphs:
 
 ### Controls
 
-- Left click with `Ctrl` pressed creates a new particle. Particles can be placed on top of each other &mdash; the interaction potential was designed to handle this situation
+- Left click with `Ctrl` pressed creates a new particle. Particles can be placed on top of each other &ndash; the interaction potential was designed to handle this situation
 - Pressing `Shift` creates a temporary particle. It follow the cursor as long `Shift` is pressed and interacts with the rest of the particles as if it was just a normal particle
 - `Backspace` removes the last added particle and `Del` deletes them all
 - Pressing `F` freezes/unfreezes the simulation

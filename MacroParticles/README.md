@@ -21,4 +21,4 @@ Graphs:
 
 ### Building
 
-The project uses a simple graphics library for Windows (found in ../_Graphics). To build the project you can either use the included Code::Blocks project file (*.cbp) or edit the compiler paths in `build.bat` script and build the project using the provided `Makefile`.
+The project uses a simple graphics library for Windows (found in `../_Graphics`). To build the project you can either use the included Code::Blocks project file (*.cbp) or edit the compiler paths in `build.bat` script and build the project using the provided `Makefile`.

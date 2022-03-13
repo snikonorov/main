@@ -98,11 +98,6 @@ struct Vector3d
 		return {y, -x, 0};
 	}
 
-    /*T sAbs() const
-    {
-        return max3(std::abs(x), std::abs(y), std::abs(z));
-    }*/
-
     T Sqr() const
     {
         return x*x + y*y + z*z;
@@ -310,7 +305,7 @@ auto operator*(const Q& k, const Vector3d<T>& a) -> Vector3d<decltype((T)k * a.x
 
 ///----------------------------------------------------------------------------------------------------
 
-template<class T, class R, class A>
+/*template<class T, class R, class A>
 Vector3d<R> operator^(R (*f)(A), const Vector3d<T>& v)
 {
     return Vector3d<R>(f(v.x), f(v.y), f(v.z));
@@ -321,7 +316,7 @@ template<class T, class Q>
 auto operator^(Q f, const Vector3d<T>& v) -> Vector3d<decltype(f(v.x))>
 {
     return Vector3d<decltype(f(v.x))>(f(v.x), f(v.y), f(v.z));
-}
+}*/
 
 ///----------------------------------------------------------------------------------------------------
 

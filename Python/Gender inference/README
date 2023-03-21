@@ -1,0 +1,47 @@
+The following project contains two machine learning models for name-gender inference: suffix-based
+and CNN-based. Running 'main_suffix.py' or 'main_cnn.py' will train the corresponding model from scratch 
+and print out model stats and test set prediction accuracy. Both models accept an array of names and labels
+(both as raw text-strings, the appropriate normalization is done on the fly) to be trained. During prediction
+both accept an array of names and return and array of gender labels (as in 'name_gender.csv').
+
+The reasons why two models are included:
+
+   - while the CNN-based model technically achieved better accuracy than the suffix-based one
+     (about 89% against 87% on average) the latter model has by an order of magnitude less trainable
+	 parameters and less hyperparameters, which makes it easier to finetune
+
+   - both models are generalizable for the case when names contain non-ASCII characters,
+     but the suffix-based model generally scales slower (e.g. doubling the amount of possible characters
+	 doubles the amount of memory CNN-based model uses, while the same for the suffix-based one will only
+	 be the case when the whole set of character is changed from ASCII-only to emoji-only)
+
+   - the suffix-based model is extremely simple, it is trained significantly faster than the CNN-based one
+     and it has no requirements aside from numpy to run
+
+------------------------------------------------------------------------------------------------------------
+
+Folder contents breakdown
+
+model:
+
+	env_activate.bat	A shell script that activates a virtual environment to run the models in
+						and adjusts the PATH
+
+	env_activate.sh		A copy of 'env_activate.bat' rewritten for bash
+
+	_test.py			[optional] Tests both models on a set on out-of-domain/nonsense names
+						(loads pretrained models and, hence, expects 'model.dict' and 'model.tf'
+						to be present in the current directory. Those files may be generated using
+						'main_suffix.py' and 'main_cnn.py' respectively)
+
+	helpers.py			Contains a couple of helper functions used in both of the main files
+
+	main_cnn.py			[main] Contains the code to train a CNN-based model from scratch and evaluate
+						its performance
+
+	main_suffix.py		[main] Contains the code to train a suffix-based model from scratch and evaluate
+						its performance
+
+	model_cnn.py		Definition and description of a CNN-based model
+
+	model_suffix.py		Definition and description of a suffix-based model
